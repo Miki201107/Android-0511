@@ -1,0 +1,20 @@
+/*
+Пользователь вводит число, необходимо увеличить это число на 15% и вывести результат на экран
+*/
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+
+       Scanner scan = new Scanner(System.in);
+       int num = scan.nextByte();
+ // Вводить только целое      
+ //   System.out.println(num);
+
+    float j=(float)num;
+
+    float num15 = j+j/100*15;
+
+        System.out.println(num15);
+
+    }
+}
