@@ -17,7 +17,7 @@ public class Main {
  //           System.out.println(i +" - " + a[i]);
         }
  // Проверяем массив
-        while (summa<10) {
+        while (summa<11) {
             summa=summa+a[j];
             j++;
         }
