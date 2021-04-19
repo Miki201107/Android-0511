@@ -1,0 +1,28 @@
+/*
+Задание: Дан массив с числами. Узнайте сколько элементов с начала массива надо сложить, чтобы в сумме получилось больше 10-ти.
+*/
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+
+        int [] a = new int[10];
+        int j=0;
+        int summa=0;
+        System.out.println("Введи 10 цифр ...");
+        Scanner scan = new Scanner(System.in);
+// Получаем массив
+        for (int i=0; i<10; i++) {
+            a[i] = scan.nextByte();
+ //           System.out.println(i +" - " + a[i]);
+        }
+ // Проверяем массив
+        while (summa<10) {
+            summa=summa+a[j];
+            j++;
+        }
+
+        System.out.println("Ответ - " + j);
+
+    }
+}
