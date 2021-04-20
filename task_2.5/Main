@@ -1,0 +1,21 @@
+/*
+Задание: Запросить у пользователя ввод числа и сохранить это число в переменную a.
+Если переменная a равна 10, то выведите 'Верно', иначе выведите 'Неверно'.
+*/
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+        double a;
+
+        System.out.println("Угадайте число от 1 до 15 ....");
+        a = scan.nextDouble();
+
+        while (a!=10) {
+        System.out.println("Неверно");
+        a = scan.nextDouble();
+            }
+        System.out.println("Наконец то .... Верно");
+    }
+}
