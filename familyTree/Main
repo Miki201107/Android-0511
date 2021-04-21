@@ -3,15 +3,20 @@ package familyTree;
 public class Main {
     public static void main(String[] args) {
 
+        Person old = new Person("Прaбабка", 96, null,null);
+
         Person nikolai = new Person("Николай", 71, null,null);
         Person zina = new Person("Зина", 66, null,null);
+
         Person vlad = new Person("Влад", 63, null,null);
-        Person nina = new Person("Нина", 60, null,null);
-        Person oleg = new Person("Олег",40,vlad,nikolai);
+        Person nina = new Person("Нина", 60, old,null);
+
+        Person oleg = new Person("Олег",40,zina,nikolai);
         Person olga = new Person("Ольга",35,nina,vlad);
+
         Person igor = new Person("Игорь",13,olga,oleg);
 
-        vlad.getInfo();
+        zina.getInfo();
         olga.getInfo();
         igor.getInfo();
 
@@ -36,17 +41,27 @@ class Person{
     // -----------------------------------
     public void getInfo(){
         String info= "Меня зовут "+this.name+"\n";
+
         if(this.mother != null){
             info += "Мою маму зовут "+this.mother.name+"\n"; // info = info + "Мою маму...";
-            if (this.mother.mother != null){
-                info += "Бабушка по маме "+this.mother.mother.name+"\n";
-            }
+                if (this.mother.mother != null) {
+                    info += "Бабушка по маме " + this.mother.mother.name + "\n";
+                    if (this.mother.mother.mother != null) {
+                        info += "Прaбабушка " + this.mother.mother.mother.name + "\n";
+                    }
+                }
+                if (this.mother.father != null){
+                    info += "Дедушка по маме "+this.mother.father.name+"\n";
+                }
         }
         if(this.father != null){
             info += "Моего папу зовут "+this.father.name+"\n";
-            if (this.father.father != null){
-                info += "Дедушка по папе "+this.father.father.name+"\n";
-            }
+                if (this.father.father != null){
+                    info += "Дедушка по папе "+this.father.father.name+"\n";
+                }
+                if (this.father.mother != null){
+                    info += "Бабушка по папе "+this.father.mother.name+"\n";
+                }
         }
         System.out.println(info);
     }
