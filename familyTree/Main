@@ -45,7 +45,7 @@ class Person{
         if(this.father != null){
             info += "Моего папу зовут "+this.father.name+"\n";
             if (this.father.father != null){
-                info += "Бабушка по папе "+this.father.father.name+"\n";
+                info += "Дедушка по папе "+this.father.father.name+"\n";
             }
         }
         System.out.println(info);
